@@ -1,40 +1,20 @@
 #include <stdio.h>
-#include <conio.h>
-void main(void)
+int main(void)
 {
-	int i,j,x,y;
-	clrscr();
-	printf("\n\n  * * * ³Ë·¨¿Ú¾÷±í * * * \n\n");
-	x=9;
-	y=5;
-	for(i=1;i<=9;i++)
-	{
-		gotoxy(x,y);
-		printf("%2d ",i);
-		x+=3;
+	int x=9,y=9;
+
+	printf("\n * * * Nine-nine Multiplication Table * * * \n");
+
+	for(int i=1;i<=y;i++){
+		for(int j=1;j<=i;j++){
+			printf("%d * %d = %2d, ",j,i,i*j);
+		}	
+		printf("\n");
 	}
-	x=7;
-	y=6;
-	for(i=1;i<=9;i++)
-	{
-		gotoxy(x,y);
-		printf("%2d ",i);
-		y++;
-	}
-	x=9;
-	y= 6;
-	for(i=1;i<=9;i++)
-	{
-		for(j=1;j<=9;j++)
-		{
-			gotoxy(x,y);
-			printf("%2d ",i*j);
-			y++;
-		}
-		y-=9;
-		x+=3;
-	}
-	printf("\n\n");
+
+	printf("\n * * * Nine-nine Multiplication Table * * * \n");
+
+	return 0;
 }
 
 
