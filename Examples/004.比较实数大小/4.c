@@ -1,11 +1,16 @@
-/* 输入两个浮点数，输出它们中的大数 */
-#include <stdio.h>
-main()
+#include <stdio.h> 
+#include <float.h>
+
+int main(void)
 {
-	float x,y,c;				/* 变量定义 */
-	printf("Please input x and y:\n");	/* 提示用户输入数据 */
+	printf("The range of real comparisons is between %e and %e. \n",FLT_MIN,FLT_MAX);
+	// FLT_MIN,FLT_MAX are defined in <float.h>
+	float x,y,c;
+	printf("Please input float number x and y:\n");	
+	// input two float number
 	scanf("%f%f",&x,&y);
-	c=x>y?x:y;				/* 计算c=max(x,y) */
-	printf("MAX of (%f,%f) is %f",x,y,c);	/* 输出c */
+	c=x>y?x:y; // conditional operator d=a?b:c;
+	// if a is logically true, d=b, otherwise d=c.
+	printf("MAX of (%f,%f) is %f",x,y,c);	
 }
-
+

@@ -1,28 +1,65 @@
-/* 输出不同类型所占的字节数*/
+/* diaplay the byte of different data type*/
 #include <stdio.h>
-void main()
-{
-    /* sizeof()是保留字，它的作用是求某类型或某变量类型的字节数, */
-    /* 括号中可以是类型保留字或变量。*/
-    /*int型在不同的机器，不同的编译器中的字节数不一样,*/
-    /*一般来说在TC2.0编译器中字节数为2,在VC编译器中字节数为4 */
-    printf("The bytes of the variables are:\n");
-    printf("int:%d bytes\n",sizeof(int));
-    /* char型的字节数为1 */
-    printf("char:%d byte\n",sizeof(char));
-    /* short型的字节数为2 */
-    printf("short:%d bytes\n",sizeof(short));
-    /* long型的字节数为4 */
-    printf("long:%d bytes\n",sizeof(long));
-    /* float型的字节数为4 */
-    printf("float:%d bytes\n",sizeof(float));
-    /* double型的字节数为8 */
-    printf("double:%d bytes\n",sizeof(double));
-    /* long double型的字节数为8或10或12 */
-    printf("long double:%d bytes\n",sizeof(long double));
-    getchar();
+#include <limits.h>
+#include <float.h>
 
+int main()
+{
+    printf("The bytes of the variables are:\n");
+
+    printf("char:%ld byte\n",sizeof(char));
+	// Defined in header <limits.h>.
+    printf("CHAR_MIN  = %+d \n",CHAR_MIN);
+    printf("CHAR_MAX  = %+d \n",CHAR_MAX);
+    printf("SCHAR_MIN = %+d \n",SCHAR_MIN);
+    printf("SCHAR_MAX = %+d \n",SCHAR_MAX);
+    printf("UCHAR_MAX = %u \n",UCHAR_MAX);
+
+	putchar('\n');
+
+    printf("short:%ld bytes\n",sizeof(short));
+	// Defined in header <limits.h>.
+    printf("SHRT_MIN  = %+d \n",SHRT_MIN);
+    printf("SHRT_MAX  = %+d \n",SHRT_MAX);
+    printf("USHRT_MAX = %u \n",USHRT_MAX);
+
+	putchar('\n');
+
+    printf("int:%ld bytes\n",sizeof(int));
+	// Defined in header <limits.h>.
+    printf("INT_MIN  = %+d \n",INT_MIN);
+    printf("INT_MAX  = %+d \n",INT_MAX);
+    printf("UINT_MAX = %u \n",UINT_MAX); 
+
+	putchar('\n');
+
+    printf("float:%ld bytes\n",sizeof(float));
+	// Defined in header <float.h>.
+    printf("FLT_MIN  = %+e \n",FLT_MIN);
+    printf("FLT_MAX  = %+e \n",FLT_MAX);
+
+	putchar('\n');
+
+    printf("long:%ld bytes\n",sizeof(long));
+	// Defined in header <limits.h>.
+    printf("LONG_MIN  = %+ld \n",LONG_MIN);
+    printf("LONG_MAX  = %+ld \n",LONG_MAX);
+    printf("ULONG_MAX = %lu \n",ULONG_MAX);
+
+	putchar('\n');
+
+    printf("double:%ld bytes\n",sizeof(double));
+	// Defined in header <float.h>.
+    printf("DBL_MIN  = %+e \n",DBL_MIN);
+    printf("DBL_MAX  = %+e \n",DBL_MAX);
+
+	putchar('\n');
+
+    printf("long double:%ld bytes\n",sizeof(long double));
+	// Defined in header <float.h>.
+    printf("LDBL_MIN  = %+Le \n",LDBL_MIN);
+    printf("LDBL_MAX  = %+Le \n",LDBL_MAX);
+	
+	return 0;
 }
 
-
-
