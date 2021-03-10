@@ -1,58 +1,124 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void main()
 {
-	int Password=0,Number=0,price=58,i=0;
-
-	while( Password != 1234 )
-	{
-		if( i >= 3 )
-			return;
-		i++;
-		puts("Please input Password: ");
-		scanf("%d",&Password);
-	}
-
-	i=0;
-	while( Number!=price )
+	char SelectKey,CreditMoney,DebitMoney;
+	while(1)
 	{
 		do{
-			puts("Please input a number between 1 and 100: ");
-			scanf("%d",&Number);
-			printf("Your input number is %d\n",Number);
-		}while( !(Number>=1 && Number<=100) );
-		if( Number >= 90 )
+			system("clear");
+			puts("=========================");
+			puts("|  Please select key:   |");
+			puts("|  1. Quary             |");
+			puts("|  2. Credit            |");
+			puts("|  3. Debit             |");
+			puts("|  4. Return            |");
+			puts("=========================");
+			SelectKey = getchar();
+		}while( SelectKey!='1' && SelectKey!='2' && SelectKey!='3' && SelectKey!='4' );
+		switch(SelectKey)
 		{
-			printf("Too Bigger! Press any key to try again!\n");
+			case '1':
+				system("clear");
+				puts("================================");
+				puts("|    Your balance is $1000.    |");
+				puts("|  Press any key to return...  |");
+				puts("================================");
+				getchar();
+				break;
+			case '2':
+				do{
+					system("clear");
+					puts("==================================");
+					puts("|   Please select Credit money:  |");
+					puts("|   1. $50                       |");
+					puts("|   2. $100                      |");
+					puts("|   3. Return                    |");
+					puts("==================================");
+					CreditMoney = getchar();
+				}while( CreditMoney!='1' && CreditMoney!='2' && CreditMoney!='3' );
+				switch(CreditMoney)
+				{
+					case '1':
+						system("clear");
+						puts("=========================================");
+						puts("|  Your Credit money is $50,Thank you!  |");
+						puts("|         Press any key to return...    |");
+						puts("=========================================");
+						getchar();
+						break;
+					case '2':
+						system("clear");
+						puts("==========================================");
+						puts("|  Your Credit money is $100,Thank you!  |");
+						puts("|         Press any key to return...     |");
+						puts("==========================================");
+						getchar();
+						break;
+					case '3':
+						break;
+				}
+				break;
+			case '3':
+				do{
+					system("clear");
+					puts("====================================");
+					puts("|   Please select Debit money:     |");
+					puts("|   1. $50                         |");
+					puts("|   2. $100                        |");
+					puts("|   3. $500                        |");
+					puts("|   4. $1000                       |");
+					puts("|   5. Return                      |");
+					puts("====================================");
+					DebitMoney = getchar();
+				}while(	DebitMoney!='1' && DebitMoney!='2' && DebitMoney!='3' \
+				 && DebitMoney!='4' && DebitMoney!='5' );
+				switch(DebitMoney)
+				{
+					case '1':
+						system("clear");
+						puts("===========================================");
+						puts("|   Your Debit money is $50,Thank you!    |");
+						puts("|        Press any key to return...       |");
+						puts("===========================================");
+						getchar();
+						break;
+					case '2':
+						system("clear");
+ 						puts("===========================================");
+						puts("|   Your Debit money is $100,Thank you!   |");
+						puts("|        Press any key to return...       |");
+						puts("===========================================");
+						getchar();
+						break;
+					case '3':
+						system("clear");
+						puts("===========================================");
+						puts("|   Your Debit money is $500,Thank you!   |");
+						puts("|        Press any key to return...       |");
+						puts("===========================================");
+						getchar();
+						break;
+					case '4':
+						system("clear");
+						puts("===========================================");
+						puts("|   Your Debit money is $1000,Thank you!  |");
+						puts("|        Press any key to return...       |");
+						puts("===========================================");
+						getchar();
+						break;
+					case '5':
+						break;
+				}
+				break;
+			case '4':
+				system("clear");
+				puts("================================");
+				puts("|   Thank you for your using!  |");
+				puts("|            Good bye!         |");
+				puts("================================");
+				return;
 		}
-		else if( Number >= 70 && Number < 90 )
-		{
-			printf("Bigger!\n");
-		}
-		else if( Number >= 1 && Number <= 30 )
-		{
-			printf("Too Small! Press any key to try again!\n");
-		}
-		else if( Number > 30 && Number <= 50 )
-		{
-			printf("Small! Press any key to try again!\n");
-		}
-		else
-		{
-			if( Number == price )
-			{
-				printf("OK! You are right! Bye Bye!\n");
-			}
-			else if( Number < price )
-			{
-				printf("Sorry,Only a little smaller! Press any key to try again!\n");
-
-			}
-			else if( Number > price )
-				printf(" Sorry, Only a little bigger! Press any key to try again!\n");
-		}
-		getch();
 	}
 }
-
-
