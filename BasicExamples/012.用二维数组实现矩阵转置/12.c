@@ -1,15 +1,18 @@
-/* 用二维数组实现矩阵的转置 */
 #include <stdio.h>
+#include <stdlib.h>
+
 #define ROW 3
 #define COL 4
-main()
+
+int main()
 {
 	int matrixA[ROW][COL],matrixB[COL][ROW];
 	int i,j;
 
-	clrscr();
-	printf("Enter elements of the matrixA,");
+	system("clear");
+	printf("Enter elements of the matrix A,");
 	printf("%d*%d:\n",ROW,COL);
+	// input matrix
 	for( i=0; i<ROW; i++ )
 	{
 		for( j=0; j<COL; j++ )
@@ -17,7 +20,7 @@ main()
 			scanf("%d",&matrixA[i][j]);
 		}
 	}
-
+	// transpose the matrix A
 	for( i=0; i<ROW; i++ )
 	{
 		for( j=0; j<COL; j++ )
@@ -25,9 +28,9 @@ main()
 			matrixB[j][i] = matrixA[i][j];
 		}
 	}
-
-	printf("MatrixB,");
+	printf("Matrix B,");
 	printf("%d*%d:\n",COL,ROW);
+	// output the transposed matrix
 	for( i=0; i<COL; i++ )
 	{
 		for( j=0; j<ROW; j++ )
@@ -36,6 +39,8 @@ main()
 		}
 		printf("\n");
 	}
+	// exit
 	printf("\n  Press Any Key to Quit...  \n");
-	getch();
+	getchar();
+	return 0;
 }

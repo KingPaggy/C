@@ -1,9 +1,10 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> // call system function system();
 
 void main()
 {
 	char SelectKey,CreditMoney,DebitMoney;
+	int CMoney;
 	while(1)
 	{
 		do{
@@ -17,6 +18,7 @@ void main()
 			puts("=========================");
 			SelectKey = getchar();
 		}while( SelectKey!='1' && SelectKey!='2' && SelectKey!='3' && SelectKey!='4' );
+
 		switch(SelectKey)
 		{
 			case '1':
@@ -38,27 +40,21 @@ void main()
 					puts("==================================");
 					CreditMoney = getchar();
 				}while( CreditMoney!='1' && CreditMoney!='2' && CreditMoney!='3' );
-				switch(CreditMoney)
-				{
-					case '1':
-						system("clear");
-						puts("=========================================");
-						puts("|  Your Credit money is $50,Thank you!  |");
-						puts("|         Press any key to return...    |");
-						puts("=========================================");
-						getchar();
-						break;
-					case '2':
-						system("clear");
-						puts("==========================================");
-						puts("|  Your Credit money is $100,Thank you!  |");
-						puts("|         Press any key to return...     |");
-						puts("==========================================");
-						getchar();
-						break;
-					case '3':
-						break;
+
+				if(CreditMoney == '1')
+					CMoney = 50;
+				if(CreditMoney == '2')
+					CMoney = 100;
+				if(CreditMoney == '3')
+					break;
+				else{
+					system("clear");
+					printf("==========================================\n");
+					printf("|  Your Credit money is $%3d,Thank you!  |\n",CMoney);
+					printf("|         Press any key to return...     |\n");
+					printf("==========================================\n");
 				}
+				getchar();
 				break;
 			case '3':
 				do{
